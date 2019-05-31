@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,11 +37,15 @@ namespace PerlinNoisePlayGround
             int height = 513;
             int width = 513;
 
-            float scale = 100f;
-            int seed = rand.Next();
-            int octaves = 10;
-            float persistance = 0.5f;
-            float lacunarity = 1.87f;
+            float scale = Int32.Parse(scaleText.Text);
+            int seed = Int32.Parse(seedText.Text);
+            if(seed == 0)
+            {
+                seed = rand.Next();
+            }
+            int octaves = Int32.Parse(octaveText.Text);
+            float persistance = float.Parse(persistanceText.Text, CultureInfo.InvariantCulture.NumberFormat);
+            float lacunarity = float.Parse(lacunarityText.Text, CultureInfo.InvariantCulture.NumberFormat);
 
 
             float[,] map = new float[height, width];
