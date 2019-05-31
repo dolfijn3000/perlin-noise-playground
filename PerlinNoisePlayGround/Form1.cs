@@ -239,7 +239,6 @@ namespace PerlinNoisePlayGround
         {
 
             Random rnd = new Random(seed);
-
             float offsetX = rnd.Next(0, 100000);
             float offsetY = rnd.Next(0, 100000);
 
